@@ -25,21 +25,6 @@ Before diving deep, let's look at a very nice coroutine.
 
 Don't worry about any details here, just look at how nice it is to write and use.
 
-First, we know it's a coroutine because it has the `co_yield` keyword somewhere inside.
-
-In coroutines lingo, it's called a **generator**.
-Essentially, it's a coroutine that only outputs (yields) values.
-
-Something that might be confusing is line 16. It looks like a function call, but
-remember that `fibonacci_numbers()` is not really a function - it's a coroutine.
-In reality, that line is **lazy**, it does not execute any code inside `fibonacci_numbers()`,
-it only returns a sort of _handle_ that we can use later to interact
-with the coroutine (like we do in line 17).
-
-Also, notice how we can use the `fib` handle as a range, pretty cool.
-
-By the end of this post, you will know how to implement your own std::generator.
-
 {% highlight cpp linenos %}
 #include <print>
 #include <generator> // since C++23
@@ -62,6 +47,21 @@ int main() {
     return 0;
 }
 {% endhighlight %}
+
+First, we know it's a coroutine because it has the `co_yield` keyword somewhere inside.
+
+In coroutines lingo, it's called a **generator**.
+Essentially, it's a coroutine that only outputs (yields) values.
+
+Something that might be confusing is line 16. It looks like a function call, but
+remember that `fibonacci_numbers()` is not really a function - it's a coroutine.
+In reality, that line is **lazy**, it does not execute any code inside `fibonacci_numbers()`,
+it only returns a sort of _handle_ that we can use later to interact
+with the coroutine (like we do in line 17).
+
+Also, notice how we can use the `fib` handle as a range, pretty cool.
+
+By the end of this post, you will know how to implement your own std::generator.
 
 ## Our First Coroutine
 
@@ -93,7 +93,7 @@ It's not that obvious what this means. However, it's a crucial aspect of corouti
 **For coroutines to work, they must have a very specific return type**.
 
 In specific, they must return a type that has a type named exactly `promise_type`.
-Why? ~~Because yes.~~ Simply by definition: it's what language asks from us.
+Why? ~~Because yes.~~ Simply by definition: it's what the language asks from us.
 
 {% highlight cpp linenos %}
 #include <print>
@@ -126,16 +126,16 @@ Again, the compiler needs more from us: we must define these methods.
 One big question is: what should their signature be?
 Or maybe, first we should ask what are they for? What do they mean?
 
-Let's discuss each each one: (the line numbers mentioned refer to the code above)
+Let's discuss each one: (the line numbers mentioned refer to the code above)
 - `get_return_object`: this is the method called when we call the coroutine in line 14.
 The value of `handle` in line 14 will be whatever this method returns
-- `initial_suspend`: this tell the compiler if it should immediately start executing
+- `initial_suspend`: this tells the compiler if it should immediately start executing
 the coroutine code when it is called in line 14, or if it should not.
 In our example above: it tells the compiler if the execution flow
 should go to line 15 or to line 8.
 - `return_void`: this method gets called in line 9, when the coroutine returns.
-When a coroutine returns void, the promise type must define this method.
-If the coroutine does return void, this method will be called `return_value` instead
+When a coroutine returns `void`, the promise type must define this method.
+If the coroutine does not return `void`, this method will be called `return_value` instead
 (we will look at this case, too)
 - `unhandled_exception`: this method is called if an exception is thrown and
 not caught within the coroutine
