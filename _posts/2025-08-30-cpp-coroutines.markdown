@@ -53,7 +53,7 @@ First, we know `fibonacci_numbers()` is a coroutine because it has the `co_yield
 In coroutines lingo, it's called a **generator**.
 Essentially, it's a coroutine that keeps outputting (yielding) values.
 
-Something that might be confusing is line 16. It looks like a function call, but
+Something that might be confusing is line 15. It looks like a function call, but
 remember that `fibonacci_numbers()` is not really a function - it's a coroutine.
 In reality, that line is **lazy**, it does not execute any code inside `fibonacci_numbers()`,
 it only returns a sort of _handle_ that we can use later to interact
