@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "C++ Coroutines - very in-depth"
+title:  C++ Coroutines - in-depth 🔎
 date:   2025-08-30 21:23:34 +0100
 author: Gonçalo Ferreira
 tags: c++ coroutines deep-dive
+permalink: posts/cpp-coroutines
 ---
 
 <h2>Table of Contents</h2>
@@ -48,7 +49,7 @@ int main() {
 }
 {% endhighlight %}
 
-First, we know `f()` is a coroutine because it has the `co_yield` keyword somewhere inside.
+First, we know `fibonacci_numbers()` is a coroutine because it has the `co_yield` keyword somewhere inside.
 
 In coroutines lingo, it's called a **generator**.
 Essentially, it's a coroutine that keeps outputting (yielding) values.
