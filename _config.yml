@@ -27,6 +27,8 @@ url: "https://gventura.github.io" # the base hostname & protocol for your site, 
 #twitter_username:
 github_username:  gventuraf
 
+google_analytics: G-951E2XQD7W
+
 # Build settings
 theme: jekyll-theme-hacker
 

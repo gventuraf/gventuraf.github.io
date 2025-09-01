@@ -731,5 +731,15 @@ std::suspend_always yield_value(std::vector) noexcept { ... }
 - If your coroutines has parameters, you can also receive them in your promise type.
 Just write a constructor that takes in the same parameter list.
 
+## References
+
+Videos on Youtube:
+- [C++20’s Coroutines for Beginners - Andreas Fertig - CppCon 2022](https://www.youtube.com/watch?v=8sEe-4tig_A){:target="_blank"} 🔗
+- [Deciphering C++ Coroutines - A Diagrammatic Coroutine Cheat Sheet - Andreas Weis - CppCon 2022](https://www.youtube.com/watch?v=J7fYddslH0Q){:target="_blank"} 🔗
+
+Books:
+- Chapter 8 of 'Asynchronous Programming with C++' by Javier Reguera-Salgado and Juan Antonio Rufes
+
+
 [suspend_never]:  https://en.cppreference.com/w/cpp/coroutine/suspend_never.html
 [suspend_always]: https://en.cppreference.com/w/cpp/coroutine/suspend_always.html
