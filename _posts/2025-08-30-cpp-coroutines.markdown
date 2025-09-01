@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  C++ Coroutines - in-depth 🔎
+title:  C++ Coroutines — In Depth 🔎
 date:   2025-08-30 21:23:34 +0100
 author: Gonçalo Ferreira
 tags: c++ coroutines deep-dive
@@ -13,10 +13,9 @@ permalink: posts/cpp-coroutines
 
 ## Some Quick Basics
 
-This is probably not the first post you read about coroutines, so let's just
-quickly run through some basics:
+This is probably not the first post you read about coroutines, so let's quickly run through the basics:
 - A coroutine is basically a function that can be paused and resumed
-- Any function that has any of the keywords `co_yield`, `co_await`, or `co_return` is a coroutine
+- Any function containing one or more of the keywords `co_yield`, `co_await`, or `co_return` is considered a coroutine
 - That's all, let's just jump in
 
 ## A Beautiful and Simple Coroutine - std::generator
