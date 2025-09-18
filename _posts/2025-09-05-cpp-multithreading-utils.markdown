@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Synchronization Mechanisms for Multi-threading ᛘ in C++
-date:   2025-09-05 14:15:16 +0100
+date:   2025-09-18 23:01:16 +0100
 author: Gonçalo Ferreira
 tags: c++ multithreading
 permalink: posts/cpp-multithreading-sync
@@ -42,16 +42,6 @@ For the game to work, these dependencies must always be running.
 Also, before the game can start, these dependencies must first be initialized.
 
 We can express this very nicely with a `std::latch`:
-
-!!
-
-!!
-
-Check this compiles first
-
-!!
-
-!!
 
 {% highlight cpp %}
 #include <print>

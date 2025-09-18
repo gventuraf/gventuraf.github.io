@@ -54,6 +54,7 @@ private:
             cond_var_.wait(guard, [this]{ return stop_ || !tasks_.empty(); });
             // at this point, we own the lock again
             if (stop_) break;
+            if (tasks_.empty()) continue; // I think we should check again here now that we own the lock
             auto task = std::move(tasks_.front());
             tasks_.pop();
             guard.unlock(); // unlock it before executing the task, so other threads can work
