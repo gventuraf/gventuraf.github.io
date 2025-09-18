@@ -3,6 +3,10 @@ permalink: /404.html
 ---
 
 <style type="text/css" media="screen">
+  html {
+    background-color: black;
+    color: gray;
+  }
   .container {
     margin: 10px auto;
     max-width: 600px;
@@ -18,7 +22,14 @@ permalink: /404.html
 
 <div class="container">
   <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <p><strong>Page not found.
+    Tell me <a href="https://github.com/gventuraf/gventuraf.github.io">on Github</a>
+    if it should've been here</strong></p>
+  <h2><a href={{site.url}}>Go back to the blog</a></h2>
 </div>
+
+<!--
+Would be nice to add a "were you looking for this post instead"
+Can get the current URL with {{site.url}}{{page.url}}
+And then can iterate over all posts and so string-matching
+-->
