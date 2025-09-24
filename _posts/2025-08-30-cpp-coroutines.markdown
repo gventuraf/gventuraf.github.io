@@ -624,7 +624,7 @@ We do need all these methods to make `co_await_` work. Let's look at each one in
 
 - `await_ready`: this method is called when the execution flow hits the `co_await` instruction.
 If it returns `true`, the coroutine will not pause - i.e it will consider that the value it was awaiting for
-is already ready to be consume. If it returns `false', it will pause and give up the flow control.
+is already ready to be consumed. If it returns `false', it will pause and give up the flow control.
 (we will come back to this, don't worry 😉)
 - `await_resume`: this method is called when the coroutine wants to fetch the value it is _awaiting_ for.
 After it consumes the value, it keeps on executing.

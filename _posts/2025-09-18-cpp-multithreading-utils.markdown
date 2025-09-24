@@ -4,7 +4,7 @@ title: Synchronization Mechanisms for Multi-threading ᛘ in C++
 date:   2025-09-18 23:01:16 +0100
 author: Gonçalo Ferreira
 tags: c++ multithreading
-permalink: posts/cpp-multithreading-sync
+permalink: posts/cpp-multithreading-mechanisms
 ---
 
 <h2>Table of Contents</h2>
@@ -627,9 +627,11 @@ to put a simple thread pool in this section. But making one actually came with a
 interesting set of its own problems. So... It will be a separate post (I will
 link it here once it's done).
 
-Since somehow you're reading this so early that I haven't made the actual post (thank you,
-ny the way!). I will leave the link here to the current (maybe working)
-version of [my threadpool][my_threadpool]{:target="_blank"} 🔗.
+~~Since somehow you're reading this so early that I haven't made the actual post (thank you,
+by the way!), I will leave the link here to the current (maybe working)
+version of [my threadpool][my_threadpool]{:target="_blank"} 🔗.~~
+
+Here is the post: [Writing a Threadpool (feat Coroutines) 🧵]({% post_url 2025-09-25-threadpool %}){:target="_blank"} 🔗.
 
 ## \<atomic\> & Memory Model
 
